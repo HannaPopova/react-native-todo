@@ -8,7 +8,7 @@
 
 import React, { Component } from 'react';
 import { Platform, StyleSheet, Text, View } from 'react-native';
-import ListScreen from './screens/List';
+import Main from './screens/Main';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -18,10 +18,12 @@ const instructions = Platform.select({
 });
 
 export default class App extends Component {
+
+
   render() {
     return (
       <View style={styles.container}>
-        <ListScreen />
+        <Main />
       </View>
     );
   }

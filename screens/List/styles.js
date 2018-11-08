@@ -10,7 +10,7 @@ export default StyleSheet.create({
   },
   header: {
     height: 80,
-    width: '100%',
+    width: 400,
     alignItems: 'center',
     justifyContent: 'center',
     borderBottomWidth: 1,
