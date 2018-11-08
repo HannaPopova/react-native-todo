@@ -4,31 +4,9 @@ import { ScrollView, Text, View, TouchableOpacity } from 'react-native';
 import styles from './styles';
 
 class ListScreen extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      list: [
-        'Tomato',
-        'Cheese',
-        'Onion',
-        'Garlic',
-        'Cucumber',
-        'Potato',
-        'Fish',
-        'Meat',
-        'Eggs',
-        'Bread',
-      ]
-    }
-  }
-  handleDelete = (num) => {
-    this.setState({
-      list: this.state.list.filter((item, index) => index !== num)
-    })
-  }
 
   render() {
-    const { list } = this.state;
+    const { list } = this.props;
     return(
       <View style={styles.container}>
         <View style={styles.header}>
@@ -38,7 +16,7 @@ class ListScreen extends Component {
         {list.map((item, index) => (
           <View key={index} style={styles.listItem}>
             <Text>{index+1}. {item}</Text>
-            <TouchableOpacity style={styles.button} onPress={() => this.handleDelete(index)}>
+            <TouchableOpacity style={styles.button} onPress={() => this.props.handleDelete(index)}>
               <Text style={styles.buttonText}>x</Text>
             </TouchableOpacity>
           </View>)
