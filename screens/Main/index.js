@@ -17,6 +17,7 @@ class Main extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      header: 'List of Goods',
       tab: 'list',
       list: [
         'Tomato',
@@ -38,13 +39,13 @@ class Main extends Component {
   }
 
   renderScreen = () => {
-    const { tab, list } = this.state;
+    const { header, tab, list } = this.state;
     if (tab === 'list') {
-      return (<ListScreen list={list} handleDelete={this.handleDelete}/>);
+      return (<ListScreen header={header} list={list} handleDelete={this.handleDelete}/>);
     } else if (tab === 'create') {
       return (<CreateScreen handleCreate={this.handleCreate}/>);
-    } else {
-      return (<SettingsScreen />);
+    } else if (tab === 'settings') {
+      return (<SettingsScreen handleHeader={this.handleHeader}/>);
     }
   }
 
@@ -56,6 +57,10 @@ class Main extends Component {
 
   handleCreate = (name) => {
     this.setState({ list: [ ...this.state.list, name ]})
+  }
+
+  handleHeader = (header) => {
+    this.setState({ header: header })
   }
 
   render() {

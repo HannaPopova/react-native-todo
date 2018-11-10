@@ -6,11 +6,11 @@ import styles from './styles';
 class ListScreen extends Component {
 
   render() {
-    const { list } = this.props;
+    const { header, list } = this.props;
     return(
       <View style={styles.container}>
         <View style={styles.header}>
-          <Text>LIST OF GOODS</Text>
+          <Text>{header}</Text>
         </View>
         <ScrollView style={styles.listView} contantContainerStyle={styles.listContainer}>
         {list.map((item, index) => (

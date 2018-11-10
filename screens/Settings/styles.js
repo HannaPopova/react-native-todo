@@ -4,7 +4,8 @@ export default StyleSheet.create({
   container: {
     flex: 1,
     width: '100%',
-    backgroundColor: '#dde1e2',
+    alignItems: 'center',
+    backgroundColor: 'lightgreen',
   },
   header: {
     height: 80,
@@ -12,10 +13,12 @@ export default StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     borderBottomWidth: 1,
-    backgroundColor: '#fda1e2',
+    backgroundColor: 'green',
   },
   listView: {
     width: '100%',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   listContainer: {
     justifyContent: 'center',
@@ -38,5 +41,30 @@ export default StyleSheet.create({
   buttonText: {
     fontSize: 20,
     color: 'red',
-  }
+  },
+  textInput: {
+    marginTop: 130,
+    paddingHorizontal: 15,
+    width: 240,
+    height: 60,
+    borderWidth: 1,
+    borderRadius: 5,
+    backgroundColor: 'olive',
+  },
+  createButton: {
+    marginTop: 30,
+    paddingHorizontal: 15,
+    width: 80,
+    height: 30,
+    borderWidth: 1,
+    borderRadius: 5,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#ffffff',
+  },
+  texth: {
+    marginTop: 20,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
 });
