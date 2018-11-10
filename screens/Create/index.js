@@ -12,7 +12,7 @@ class CreateScreen extends Component {
   }
   
   handleCreate = () => {
-    this.props.handleCreate(this.state.text;
+    this.props.handleCreate(this.state.text);
     this.setState({ text: '' });
   }
 
