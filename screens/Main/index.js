@@ -21,16 +21,7 @@ class Main extends Component {
       header: 'List of Goods',
       tab: 'list',
       list: [
-        'Tomato',
-        'Cheese',
-        'Onion',
-        'Garlic',
-        'Cucumber',
-        'Potato',
-        'Fish',
-        'Meat',
-        'Eggs',
-        'Bread',
+        { name: 'Tomato', date: new Date() },
       ]
     }
   }
