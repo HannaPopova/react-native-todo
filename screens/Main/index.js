@@ -11,6 +11,7 @@ import { TouchableOpacity, StyleSheet, Text, View } from 'react-native';
 import ListScreen from '../List';
 import CreateScreen from '../Create';
 import SettingsScreen from '../Settings';
+import CalendarScreen from '../Calendar';
 import styles from './styles';
 
 class Main extends Component {
@@ -20,16 +21,7 @@ class Main extends Component {
       header: 'List of Goods',
       tab: 'list',
       list: [
-        'Tomato',
-        'Cheese',
-        'Onion',
-        'Garlic',
-        'Cucumber',
-        'Potato',
-        'Fish',
-        'Meat',
-        'Eggs',
-        'Bread',
+        { name: 'Tomato', date: new Date() },
       ]
     }
   }
@@ -41,11 +33,13 @@ class Main extends Component {
   renderScreen = () => {
     const { header, tab, list } = this.state;
     if (tab === 'list') {
-      return (<ListScreen header={header} list={list} handleDelete={this.handleDelete}/>);
+      return (<ListScreen header={header} list={list} handleDelete={this.handleDelete} />);
     } else if (tab === 'create') {
-      return (<CreateScreen handleCreate={this.handleCreate}/>);
+      return (<CreateScreen handleCreate={this.handleCreate} />);
     } else if (tab === 'settings') {
-      return (<SettingsScreen handleHeader={this.handleHeader}/>);
+      return (<SettingsScreen handleHeader={this.handleHeader} />);
+    } else if (tab=== 'calendar') {
+      return (<CalendarScreen />);
     }
   }
 
@@ -76,6 +70,9 @@ class Main extends Component {
           </TouchableOpacity>
           <TouchableOpacity style={styles.bottomTab} onPress={() => this.navigate('settings')}>
             <Text>Settings</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.bottomTab} onPress={() => this.navigate('calendar')}>
+            <Text>Calendar</Text>
           </TouchableOpacity>
         </View>
       </View>

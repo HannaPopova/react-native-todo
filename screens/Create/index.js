@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Text, View, TouchableOpacity, TextInput } from 'react-native';
-
+import DatePicker from 'react-native-datepicker';
 import styles from './styles';
 
 class CreateScreen extends Component {
@@ -22,6 +22,22 @@ class CreateScreen extends Component {
         <View style={styles.header}>
           <Text>CREATE GOOD</Text>
         </View>
+        <DatePicker 
+          style={styles.datePicker}
+          date={this.state.date}
+          mode="datetime"
+          placeholder="select date"
+          format="HH:mm  DD-MM-YYYY"
+          minDate={new Date()}
+          confirmBtnText="Confirm"
+          cancelBtnText="Cancel"
+          customStyles={{
+            dateIcon: styles.dateIcon,
+            dateInput: styles.dateInput,
+            placeholderText: styles.placeholderText,
+          }}
+          onDateChange={(date) => {this.setState({date: date})}}
+        />
         <View style={styles.listView} contantContainerStyle={styles.listContainer}>
           <TextInput
             style={styles.textInput}
