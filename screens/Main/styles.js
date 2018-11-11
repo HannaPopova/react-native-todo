@@ -9,7 +9,7 @@ export default StyleSheet.create({
     flexDirection: 'row',
   },
   bottomTab: {
-    width: '33.33%',
+    width: '25%',
     borderWidth: 1,
     alignItems: 'center',
     justifyContent: 'center',
