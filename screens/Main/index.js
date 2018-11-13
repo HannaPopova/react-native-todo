@@ -11,7 +11,7 @@ import { TouchableOpacity, StyleSheet, Text, View } from 'react-native';
 import ListScreen from '../List';
 import CreateScreen from '../Create';
 import SettingsScreen from '../Settings';
-import CalendarScreen from '../Calendar';
+import ImageScreen from '../Image';
 import styles from './styles';
 
 class Main extends Component {
@@ -38,8 +38,8 @@ class Main extends Component {
       return (<CreateScreen handleCreate={this.handleCreate} />);
     } else if (tab === 'settings') {
       return (<SettingsScreen handleHeader={this.handleHeader} />);
-    } else if (tab=== 'calendar') {
-      return (<CalendarScreen />);
+    } else if (tab === 'image') {
+      return (<ImageScreen />);
     }
   }
 
@@ -71,8 +71,8 @@ class Main extends Component {
           <TouchableOpacity style={styles.bottomTab} onPress={() => this.navigate('settings')}>
             <Text>Settings</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.bottomTab} onPress={() => this.navigate('calendar')}>
-            <Text>Calendar</Text>
+          <TouchableOpacity style={styles.bottomTab} onPress={() => this.navigate('image')}>
+            <Text>Image</Text>
           </TouchableOpacity>
         </View>
       </View>
