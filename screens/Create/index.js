@@ -7,12 +7,16 @@ class CreateScreen extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      text: ''
+      text: '',
+      date: null,
     }
   }
   
   handleCreate = () => {
-    this.props.handleCreate(this.state.text);
+    this.props.handleCreate({
+      name: this.state.text,
+      date: this.state.date,
+    });
     this.setState({ text: '' });
   }
 
@@ -27,7 +31,7 @@ class CreateScreen extends Component {
           date={this.state.date}
           mode="datetime"
           placeholder="select date"
-          format="HH:mm  DD-MM-YYYY"
+          format="HH:mm DD-MM-YYYY"
           minDate={new Date()}
           confirmBtnText="Confirm"
           cancelBtnText="Cancel"
@@ -36,12 +40,12 @@ class CreateScreen extends Component {
             dateInput: styles.dateInput,
             placeholderText: styles.placeholderText,
           }}
-          onDateChange={(date) => {this.setState({date: date})}}
+          onDateChange={(date) => {this.setState({ date })}}
         />
         <View style={styles.listView} contantContainerStyle={styles.listContainer}>
           <TextInput
             style={styles.textInput}
-            onChangeText={(text) => this.setState({text})}
+            onChangeText={(text) => this.setState({ text })}
             value={this.state.text}
           />
           <TouchableOpacity style={styles.createButton} onPress={this.handleCreate}>
