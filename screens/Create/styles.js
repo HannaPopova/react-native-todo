@@ -43,7 +43,7 @@ export default StyleSheet.create({
     color: 'red',
   },
   textInput: {
-    marginTop: 130,
+    marginTop: 30,
     paddingHorizontal: 15,
     width: 240,
     height: 60,

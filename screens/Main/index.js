@@ -21,7 +21,7 @@ class Main extends Component {
       header: 'List of Goods',
       tab: 'list',
       list: [
-        { name: 'Tomato', date: new Date() },
+        { name: 'Tomato', date: '20:00 12-12-2018' },
       ]
     }
   }
@@ -49,8 +49,8 @@ class Main extends Component {
     })
   }
 
-  handleCreate = (name) => {
-    this.setState({ list: [ ...this.state.list, name ]})
+  handleCreate = (elem) => {
+    this.setState({ list: [ ...this.state.list, elem ]})
   }
 
   handleHeader = (header) => {
