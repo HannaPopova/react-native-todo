@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View, TouchableOpacity, TextInput } from 'react-native';
+import { Text, View, TouchableOpacity, TextInput, Alert } from 'react-native';
 import DatePicker from 'react-native-datepicker';
 import styles from './styles';
 
@@ -13,6 +13,12 @@ class CreateScreen extends Component {
   }
   
   handleCreate = () => {
+    Alert.alert(
+      'Succesfully saved',
+      '',
+      [{text: 'OK', onPress: () => console.log('OK Pressed')}],
+        { cancelable: false }
+    );
     this.props.handleCreate({
       name: this.state.text,
       date: this.state.date,
